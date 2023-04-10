@@ -1,0 +1,25 @@
+ 
+ <app-child (childEvent)="messagefromchild=$event"></app-child>
+
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Image</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let group of messagefromchild" >
+        <td>{{ group.Id }}</td>
+        <td>{{ group.Name }}</td>
+        <td>{{ group.Price }}</td>
+        <td>{{ group.Quantity }}</td>
+        <td><img [src]="group.imageUrl" style="width:70px;" /></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
